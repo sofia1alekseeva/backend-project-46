@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import usageHelp from '../src/index.js';
+import genDiff from '../index.js';
 
-usageHelp();
+genDiff();
