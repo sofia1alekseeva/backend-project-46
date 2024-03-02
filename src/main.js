@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
 import parseFile from './utils/parse-file.js';
+import compareDifference from './utils/compare-diff.js';
 
 const program = new Command();
 
@@ -19,6 +20,8 @@ export default function genDiff() {
       const file2Data = parseFile(filepath2);
       console.log('filepath1:', file1Data);
       console.log('filepath2:', file2Data);
+      const result = compareDifference(file1Data, file2Data);
+      console.log(result);
     })
     .parse(process.argv);
 }
